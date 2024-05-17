@@ -460,7 +460,6 @@ module.exports = [
   },
   {
     name: "ask",
-    aliases: ["naviac", "prompt"],
     description: "Ask a question to N.A.V.I.A.C.",
     type: ApplicationCommandType.ChatInput,
     integration_types: [0, 1],
@@ -479,6 +478,14 @@ module.exports = [
         required: false,
       },
     ],
+  },
+
+  {
+    name: "ping",
+    description: "Pong! View the bot's latency",
+    type: ApplicationCommandType.string,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
   },
 
   // message commands
