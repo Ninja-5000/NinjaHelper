@@ -1,0 +1,8 @@
+node_modules
+config.js
+*.zip
+.npm
+*.sh
+.gitconfig
+biome.json
+tmp
