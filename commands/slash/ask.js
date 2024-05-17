@@ -6,7 +6,7 @@ module.exports = {
   requires: ["naviac"],
 
   async execute(client, int) {
-    const question = int.options.getString("question");
+    const prompt = int.options.getString("prompt");
     const ephemeral = int.options.getBoolean("ephemeral");
 
     const embed = new EmbedBuilder();
@@ -19,7 +19,7 @@ module.exports = {
       const res = await axios.put(
         "https://avsac-api.onrender.com/generate-response",
         {
-          text: question,
+          text: prompt,
         },
         {
           auth: {

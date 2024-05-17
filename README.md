@@ -1,19 +1,24 @@
+This is a fork of the bot made by [**stef_dp**](https://github.com/Stef-00012) - [Source code](https://github.com/Stef-00012/Discord-User-Installed-Apps)
+
+---
+
 # Installation
 
-1. `git clone https://github.com/Stef-00012/Discord-User-Installed-Apps`
+1. `git clone https://github.com/Ninja-5000/NinjaHelper.git`
 2. `npm i`
-3. rename `config.example.js` to `config.js`
-4. replace the required fields in the config file
+3. Rename `config.example.js` to `config.js`
+4. Replace the required fields in the config file.
 
 # Config
 
-- replace `<BOT_TOKEN>` with your bot token ID
-- replace `<YOUR_ID>` with your account ID
+- replace `<BOT_TOKEN>` with your bot token.
+- replace `<USER_ID>` with your Discord user ID.
 - replace `<MONGO_URI>` with your mongodb database connection string
 
-# Hosted
+# Hosting
 
-If you can not selfhost the bot, you can use the already hosted versions
+If you cannot selfhost the bot, you can use the already hosted versions
 
-- By [Stef-00012](https://github.com/Stef-00012) (me) - [here](https://discord.com/oauth2/authorize?client_id=1219574606294417499)
-- By [CreeperITA104](https://github.com/Creeperita09) - [here](https://discord.com/oauth2/authorize?client_id=1222184630581592107)
+- By [**Stef-00012**](https://github.com/Stef-00012) - [here](https://discord.com/oauth2/authorize?client_id=1219574606294417499)
+- By [**CreeperITA104**](https://github.com/Creeperita09) - [here](https://discord.com/oauth2/authorize?client_id=1222184630581592107)
+- By [**Ninja-5000**](https://github.com/Ninja-5000) (me) - [here](https://discord.com/oauth2/authorize?client_id=1042885313367900211)
