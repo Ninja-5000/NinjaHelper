@@ -16,5 +16,6 @@
   "8ball": true,
   "upload": false,
   "shorten": false,
-  "ask": true
+  "ask": true,
+  "ping": true
 }
