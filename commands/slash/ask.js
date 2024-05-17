@@ -7,7 +7,7 @@ module.exports = {
 
   async execute(client, int) {
     const question = int.options.getString("question");
-    const ephemeral = int.options.getBoolean("personal");
+    const ephemeral = int.options.getBoolean("ephemeral");
 
     const embed = new EmbedBuilder();
 
@@ -44,10 +44,12 @@ module.exports = {
       });
     } catch (e) {
       int.editReply({
-        content: "Something went wrong...",
+        content: "uhh something went wrong...",
       });
 
-      console.log(e);
+      console.log(
+        `\x1b[31mThe N.A.V.I.A.C. API request failed with status ${e.response.status} (${e.response.statusText})\x1b[0m`
+      );
     }
   },
 };
