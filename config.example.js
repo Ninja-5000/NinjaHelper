@@ -18,4 +18,9 @@ module.exports = {
     username: null, // string
     token: null, // string
   },
+
+  // Embed settings
+  embeds: {
+    pingEmbedColour: null, //string (hex: 6 DIGITS) - embed colour - /ping
+  },
 };
