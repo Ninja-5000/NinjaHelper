@@ -43,9 +43,20 @@ module.exports = {
         embeds: [embed],
       });
     } catch (e) {
-      int.editReply({
-        content: "uhh something went wrong...",
-      });
+      if (e.response.status == 429) {
+        int.editReply({
+          content: "`You're being rate-limited. Please try again later.`",
+        });
+      } else if (e.response.status == 500) {
+        int.editReply({
+          content:
+            "`The N.A.V.I.A.C. API is currently facing an internal server error [500]`\n`Please try again later.`",
+        });
+      } else {
+        int.editReply({
+          content: "uhh something went wrong...",
+        });
+      }
 
       console.log(
         `\x1b[31mThe N.A.V.I.A.C. API request failed with status ${e.response.status} (${e.response.statusText})\x1b[0m`
