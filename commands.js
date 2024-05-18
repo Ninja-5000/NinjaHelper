@@ -483,7 +483,7 @@ module.exports = [
   {
     name: "ping",
     description: "Pong! View the bot's latency",
-    type: ApplicationCommandType.string,
+    type: ApplicationCommandType.String,
     integration_types: [0, 1],
     contexts: [0, 1, 2],
   },
