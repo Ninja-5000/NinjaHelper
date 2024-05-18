@@ -4,16 +4,17 @@ This is a fork of the bot made by [**stef_dp**](https://github.com/Stef-00012) -
 
 # Installation
 
-1. `git clone https://github.com/Ninja-5000/NinjaHelper.git`
-2. `npm i`
-3. Rename `config.example.js` to `config.js`
-4. Replace the required fields in the config file.
+1. Clone this repo: `git clone https://github.com/Ninja-5000/NinjaHelper.git`
+2. Move into the cloned directory: `cd NinjaHelper`
+3. Install dependencies: `npm i`
+4. Rename `config.example.js` to `config.js`
+5. Replace the required fields in the config file.
 
 # Config
 
 - replace `<BOT_TOKEN>` with your bot token.
 - replace `<USER_ID>` with your Discord user ID.
-- replace `<MONGO_URI>` with your mongodb database connection string
+- replace `<MONGO_URI>` with your MongoDB database connection string.
 
 # Hosting
 
