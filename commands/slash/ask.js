@@ -37,7 +37,11 @@ module.exports = {
         .setThumbnail(
           "https://cdn.discordapp.com/avatars/975365560298795008/632ac9e6edf7517fa9378454c8600bdf.png?size=4096"
         )
-        .setColor("#fecdac");
+        .setColor(
+          config.embeds && config.embeds.naviacEmbedColour
+            ? config.embeds.naviacEmbedColour
+            : "#fecdac"
+        );
 
       await int.editReply({
         embeds: [embed],

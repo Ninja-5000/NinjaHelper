@@ -21,6 +21,7 @@ module.exports = {
 
   // Embed settings
   embeds: {
-    pingEmbedColour: null, //string (hex: 6 DIGITS) - embed colour - /ping
+    pingEmbedColour: "#74b9ff", //string (hex: 6 characters) - embed colour - /ping
+    evalEmbedColour: "#74b9ff", //string (hex: 6 characters) - embed colour - /eval
   },
 };
