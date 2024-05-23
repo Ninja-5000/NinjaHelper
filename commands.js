@@ -488,6 +488,38 @@ module.exports = [
     contexts: [0, 1, 2],
   },
 
+  {
+		name: "http",
+		description: "Get a HTTP status code",
+		type: ApplicationCommandType.ChatInput,
+		integration_types: [0, 1],
+		contexts: [0, 1, 2],
+		options: [
+			{
+				name: "type",
+				type: ApplicationCommandOptionType.String,
+				description: "Image theme",
+				required: true,
+				choices: [
+          {
+            name: 'Dog',
+            value: 'dog'
+          },
+          {
+            name: 'Cat',
+            value: 'cat'
+          }
+				]
+			},
+			{
+				name: "status",
+				type: ApplicationCommandOptionType.Integer,
+				description: "The HTTP status code",
+				required: true,
+			},
+		],
+	},
+
   // message commands
   {
     name: "Save as Tag",

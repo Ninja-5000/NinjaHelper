@@ -17,5 +17,6 @@
   "upload": false,
   "shorten": false,
   "ask": true,
-  "ping": true
+  "ping": true,
+  "http": true
 }
