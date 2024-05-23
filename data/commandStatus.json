@@ -18,5 +18,6 @@
   "shorten": false,
   "ask": true,
   "ping": true,
-  "http": true
+  "http": true,
+  "dig": true
 }
