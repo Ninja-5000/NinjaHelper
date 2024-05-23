@@ -25,31 +25,37 @@ module.exports = {
       },
     ];
 
-    try {
-      let evaluatedCode = await eval(code);
+		try {
+			let evaluatedCode = await eval(code);
+			
+			if (typeof evaluatedCode != 'string' && typeof evaluatedCode?.then == 'function') {
+                evaluatedCode.then(res => {
+                    evaluatedCode = res
+                })
+            }
 
-      if (typeof evaluatedCode !== "string") {
-        evaluatedCode = util.inspect(evaluatedCode);
+			if (typeof evaluatedCode !== "string") {
+				evaluatedCode = util.inspect(evaluatedCode);
 
-        fields.push({
-          name: "Output:",
-          value:
-            cleanEvalOutput(evaluatedCode).length > 1000
-              ? `\`\`\`js\n${cleanEvalOutput(evaluatedCode).substr(
-                  0,
-                  1000
-                )}...\n\`\`\``
-              : `\`\`\`js\n${cleanEvalOutput(evaluatedCode)}\n\`\`\``,
-        });
-      } else {
-        fields.push({
-          name: "Output:",
-          value:
-            evaluatedCode.length > 1000
-              ? `\`\`\`js\n${evaluatedCode.substr(0, 1000)}...\n\`\`\``
-              : `\`\`\`js\n${evaluatedCode}\n\`\`\``,
-        });
-      }
+				fields.push({
+					name: "Output:",
+					value:
+						cleanEvalOutput(evaluatedCode).length > 1000
+							? `\`\`\`js\n${cleanEvalOutput(evaluatedCode).substr(
+									0,
+									1000,
+								)}...\n\`\`\``
+							: `\`\`\`js\n${cleanEvalOutput(evaluatedCode)}\n\`\`\``,
+				});
+			} else {
+				fields.push({
+					name: "Output:",
+					value:
+						evaluatedCode.length > 1000
+							? `\`\`\`js\n${evaluatedCode.substr(0, 1000)}...\n\`\`\``
+							: `\`\`\`js\n${evaluatedCode}\n\`\`\``,
+				});
+			}
 
       embed.setColor(0x078f12).setFields(fields);
 
