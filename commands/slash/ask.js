@@ -19,7 +19,7 @@ module.exports = {
       const res = await axios.put(
         "https://avsac-api.onrender.com/generate-response",
         {
-          text: prompt
+          text: prompt,
         },
         {
           auth: {
@@ -46,34 +46,60 @@ module.exports = {
           iconURL: int.user.displayAvatarURL(), // user pfp
           text: `Requested by ${int.user.tag} • A mini API interface for NAVIAC`,
         });
-      
 
-      const regex = /\[Image generated with the help of Pollinations AI's services\]\((.*?)\)/;
-      const match = response.match(regex)
+      const regex =
+        /\[Image generated with the help of Pollinations AI's services\]\((.*?)\)/;
+      const match = response.match(regex);
 
       try {
         if (response.length > 1024) {
           response = response.substr(0, 1021) + "...";
           var shortened = true;
         }
-  
-        if (match) {
-          embed.setImage(match[1])
-          embed.addFields({ name: 'Response:', value: '\`[If there is no image, please wait as discord caches/loads it]\`'})
 
-          if ((response.replace(regex, '')).length > 0){
-            if (shortened) embed.addFields({ name: 'Response:', value: response.replace(regex, '') }, { name: 'Note:', value: '> Use the official [N.A.V.I.A.C. Discord bot](https://discord.com/oauth2/authorize?client_id=975365560298795008) to view the full response and get an enhanced experience.', inline: false })
+        if (match) {
+          embed.setImage(match[1]);
+          embed.addFields({
+            name: "Response:",
+            value:
+              "`[If there is no image, please wait as discord caches/loads it]`",
+          });
+
+          if (response.replace(regex, "").length > 0) {
+            if (shortened)
+              embed.addFields(
+                { name: "Response:", value: response.replace(regex, "") },
+                {
+                  name: "Note:",
+                  value:
+                    "> Use the official [N.A.V.I.A.C. Discord bot](https://discord.com/oauth2/authorize?client_id=975365560298795008) to view the full response and get an enhanced experience.",
+                  inline: false,
+                }
+              );
+            else
+              embed.addFields({
+                name: "Response:",
+                value: response.replace(regex, ""),
+              });
           }
-        }
-        else {
+        } else {
           embed.setThumbnail(
             "https://cdn.discordapp.com/avatars/975365560298795008/632ac9e6edf7517fa9378454c8600bdf.png?size=4096"
-          )
-          if (shortened) embed.addFields({ name: 'Response:', value: response }, { name: 'Note:', value: '> Use the official [N.A.V.I.A.C. Discord bot](https://discord.com/oauth2/authorize?client_id=975365560298795008) to view the full response and get an enhanced experience.', inline: false }) 
-          else embed.addFields({ name: 'Response:', value: response })
+          );
+          if (shortened)
+            embed.addFields(
+              { name: "Response:", value: response },
+              {
+                name: "Note:",
+                value:
+                  "> Use the official [N.A.V.I.A.C. Discord bot](https://discord.com/oauth2/authorize?client_id=975365560298795008) to view the full response and get an enhanced experience.",
+                inline: false,
+              }
+            );
+          else embed.addFields({ name: "Response:", value: response });
         }
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
 
       await int.editReply({
@@ -101,9 +127,11 @@ module.exports = {
         );
       } catch (e) {
         try {
-          console.log(`\x1b[31mError running N.A.V.I.A.C. request: ${e}\x1b[0m`);
+          console.log(
+            `\x1b[31mError running N.A.V.I.A.C. request: ${e}\x1b[0m`
+          );
         } catch (e) {
-          console.log(e)
+          console.log(e);
         }
       }
     }
