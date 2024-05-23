@@ -489,100 +489,120 @@ module.exports = [
   },
 
   {
-		name: "http",
-		description: "Get a HTTP status code",
-		type: ApplicationCommandType.ChatInput,
-		integration_types: [0, 1],
-		contexts: [0, 1, 2],
-		options: [
-			{
-				name: "type",
-				type: ApplicationCommandOptionType.String,
-				description: "Image theme",
-				required: true,
-				choices: [
+    name: "http",
+    description: "Get a HTTP status code",
+    type: ApplicationCommandType.ChatInput,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+    options: [
+      {
+        name: "type",
+        type: ApplicationCommandOptionType.String,
+        description: "Image theme",
+        required: true,
+        choices: [
           {
-            name: 'Dog',
-            value: 'dog'
+            name: "Dog",
+            value: "dog",
           },
           {
-            name: 'Cat',
-            value: 'cat'
-          }
-				]
-			},
-			{
-				name: "status",
-				type: ApplicationCommandOptionType.Integer,
-				description: "The HTTP status code",
-				required: true,
-			},
-		],
-	},
+            name: "Cat",
+            value: "cat",
+          },
+        ],
+      },
+      {
+        name: "status",
+        type: ApplicationCommandOptionType.Integer,
+        description: "The HTTP status code",
+        required: true,
+      },
+    ],
+  },
 
   {
-		name: "dig",
-		description: "Dig a domain",
-		type: ApplicationCommandType.ChatInput,
-		integration_types: [0, 1],
-		contexts: [0, 1, 2],
-		options: [
-		    {
-				name: "domain",
-				type: ApplicationCommandOptionType.String,
-				description: "Domain to dig",
-				required: true
-			},
-			{
-				name: "record",
-				type: ApplicationCommandOptionType.String,
-				description: "Record type to dig",
-				required: false,
-				autocomplete: true
-			},
-			{
-				name: "short",
-				type: ApplicationCommandOptionType.Boolean,
-				description: "Whether to have a short output",
-				required: false,
-			},
-			{
-				name: "provider",
-				type: ApplicationCommandOptionType.String,
-				description: "DNS provider to use",
-				required: false,
-				choices: [
-				    {
-				        name: '1.1.1.1 (Cloudflare)',
-				        value: '1.1.1.1'
-				    },
-				    {
-				        name: '1.1.1.2 (Cloudflare Malware Blocking)',
-				        value: '1.1.1.2'
-				    },
-				    {
-				        name: '1.1.1.3 (Cloudflare Malware Blocking + Adult Content Blocking)',
-				        value: '1.1.1.3'
-				    },
-				    {
-				        name: '8.8.8.8 (Google)',
-				        value: '8.8.8.8'
-				    },
-				    {
-				        name: '9.9.9.9 (Quad9)',
-				        value: '9.9.9.9'
-				    }
-				]
-			},
-			{
-				name: "cdflag",
-				type: ApplicationCommandOptionType.Boolean,
-				description: "Whether use the cdflag",
-				required: false,
-			},
-		],
-	},
-
+    name: "dig",
+    description: "Dig a domain",
+    type: ApplicationCommandType.ChatInput,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+    options: [
+      {
+        name: "domain",
+        type: ApplicationCommandOptionType.String,
+        description: "Domain to dig",
+        required: true,
+      },
+      {
+        name: "record",
+        type: ApplicationCommandOptionType.String,
+        description: "Record type to dig",
+        required: false,
+        autocomplete: true,
+      },
+      {
+        name: "short",
+        type: ApplicationCommandOptionType.Boolean,
+        description: "Whether to have a short output",
+        required: false,
+      },
+      {
+        name: "provider",
+        type: ApplicationCommandOptionType.String,
+        description: "DNS provider to use",
+        required: false,
+        choices: [
+          {
+            name: "1.1.1.1 (Cloudflare)",
+            value: "1.1.1.1",
+          },
+          {
+            name: "1.1.1.2 (Cloudflare Malware Blocking)",
+            value: "1.1.1.2",
+          },
+          {
+            name: "1.1.1.3 (Cloudflare Malware Blocking + Adult Content Blocking)",
+            value: "1.1.1.3",
+          },
+          {
+            name: "8.8.8.8 (Google)",
+            value: "8.8.8.8",
+          },
+          {
+            name: "9.9.9.9 (Quad9)",
+            value: "9.9.9.9",
+          },
+        ],
+      },
+      {
+        name: "cdflag",
+        type: ApplicationCommandOptionType.Boolean,
+        description: "Whether use the cdflag",
+        required: false,
+      },
+    ],
+  },
+  {
+    name: "console",
+    description: "Executes the given command",
+    type: ApplicationCommandType.ChatInput,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+    options: [
+      {
+        name: "command",
+        type: ApplicationCommandOptionType.String,
+        description: "Command to be executed in terminal",
+        required: true,
+      },
+      {
+        name: "ephemeral",
+        type: ApplicationCommandOptionType.Boolean,
+        description: "Hide the output",
+        required: false,
+      },
+    ],
+  },
 
   // message commands
   {

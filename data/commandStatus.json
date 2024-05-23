@@ -19,5 +19,6 @@
   "ask": true,
   "ping": true,
   "http": true,
-  "dig": true
+  "dig": true,
+  "console": true
 }
