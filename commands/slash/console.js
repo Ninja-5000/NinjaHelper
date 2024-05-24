@@ -9,6 +9,10 @@ module.exports = {
     const cmd = int.options.getString("command");
     const ephemeral = int.options.getBoolean("ephemeral");
 
+    if (!cmd) {
+      return await int.reply("`Please provide a command to execute.`");
+    }
+
     await int.deferReply({
       ephemeral,
     });
