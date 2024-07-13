@@ -603,6 +603,84 @@ module.exports = [
       },
     ],
   },
+  {
+    name: "animal",
+    description: "Get a random pictue of an animal",
+    type: ApplicationCommandType.ChatInput,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+    options: [
+      {
+        name: "type",
+        type: ApplicationCommandOptionType.String,
+        description: "Select an animal",
+        required: false,
+        choices: [
+          {
+            name: "Dog",
+            value: "dog",
+          },
+          {
+            name: "Fox",
+            value: "fox",
+          },
+          {
+            name: "Duck",
+            value: "duck",
+          },
+          {
+            name: "Cat",
+            value: "cat",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "urban",
+    description: "Define a term using Urban Dictionary",
+    type: ApplicationCommandType.ChatInput,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+    options: [
+      {
+        name: "term",
+        type: ApplicationCommandOptionType.String,
+        description: "The term to be defined",
+        required: true,
+      },
+    ],
+  },
+  {
+    name: "export",
+    description: "Export a file",
+    type: ApplicationCommandType.ChatInput,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+    options: [
+      {
+        name: "path",
+        type: ApplicationCommandOptionType.String,
+        description: "The file to export",
+        required: true,
+      },
+    ],
+  },
+  {
+    name: "colorpicker",
+    description: "View a color from a hex",
+    type: ApplicationCommandType.ChatInput,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+    options: [
+      {
+        name: "hex",
+        type: ApplicationCommandOptionType.String,
+        description: "The hex value",
+        required: true,
+      },
+    ],
+  },
 
   // message commands
   {

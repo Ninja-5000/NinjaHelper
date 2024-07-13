@@ -20,5 +20,9 @@
   "ping": true,
   "http": true,
   "dig": true,
-  "console": true
+  "console": true,
+  "animal": true,
+  "export": true,
+  "urban": true,
+  "colorpicker": true
 }
